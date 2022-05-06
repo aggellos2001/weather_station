@@ -1,13 +1,11 @@
-from nis import cat
-from signal import signal
-import time
+import configparser
 import inspect
-from turtle import st
-from unittest.mock import DEFAULT
+import time
+
 import requests
 from matplotlib.font_manager import json_dump
+
 from signature_calculator import SignatureCalculator
-import configparser
 
 
 def get_stations():
@@ -18,7 +16,7 @@ def get_stations():
     )
     try:
         request = requests.get(
-            f"https://api.weatherlink.com/v2/stations",
+            "https://api.weatherlink.com/v2/stations",
             params={
                 "api-key": parameters["api-key"],
                 "api-signature": signature,
