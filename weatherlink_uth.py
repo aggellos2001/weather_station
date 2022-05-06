@@ -12,8 +12,6 @@ import configparser
 
 def get_stations():
 
-    print(parameters)
-
     sig_calc = SignatureCalculator()
     signature = sig_calc.calculate_stations_signature(
         parameters["api-key"], parameters["api-secret"], parameters["t"]
@@ -82,7 +80,6 @@ def get_current_data():
 if __name__ == "__main__":
 
     global parameters
-
     parameters = {}
 
     config = configparser.ConfigParser()
